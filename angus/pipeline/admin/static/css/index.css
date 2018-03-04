@@ -1,0 +1,415 @@
+/*
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+*
+{
+    border: 0;
+    margin:0;
+    padding:0;
+    font-family: Roboto;
+}
+
+.divider {
+    background-color: #fff;
+}
+
+#main
+{
+    text-align: center;
+    margin: 20px;
+}
+
+#main h1
+{
+    text-transform: uppercase;
+}
+
+/*.steps
+{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}*/
+
+ul#firt-step
+{
+    list-style-type: none;
+    text-align: center;
+}
+
+ul#firt-step li
+{
+    display: inline-flex;
+}
+
+#usb-selected , #ip-selected, #form
+{
+    display: none;
+}
+
+/*#form-content
+{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    text-align: center;
+}*/
+
+#third
+{
+    display: none;
+    text-align: center;
+}
+
+#third-form
+{
+    margin: auto;
+    width: max-content;
+}
+
+/*#third a*/
+/*{*/
+    /*position: relative;*/
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
+/*}*/
+
+
+
+div.description p
+{
+    margin:0 !important;
+}
+
+.btn-flat, btn {
+    background-color: #fff;
+    text-transform: none !important;
+    margin-right: 3px !important;
+}
+
+
+.btn-flat.disabled, .btn-flat:focus {
+    color: #bebebe !important;
+    border: 1px solid #eeeeee !important;
+    background-color: #eeeeee;
+}
+
+.main-btn, .btn-live, .btn-live:focus
+{
+    background-color: #337ab7 !important;
+    color: white !important;
+    border: 1px solid #2e6da4 !important;
+}
+
+.btn-start
+{
+    color: #fff !important;
+    background-color: #81c784;
+    border: 1px solid #81c784;
+}
+
+.btn-stop
+{
+    color: #fefefe !important;
+    background-color: #d32f2f;
+    border: 1px solid #ff5252;
+}
+
+.btn-start, .btn-stop, .btn-live {
+     display: inline-flex;
+ }
+
+.btn-delete {
+    color: #d32f2f;
+    border: solid 1px #d32f2f;
+}
+
+.chip {
+    text-transform: capitalize;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #337ab7 !important;
+}
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #428CE2 !important;
+}
+
+/* MODAL */
+.ui.steps .step.active .title {
+    color: #4fc3f7;
+}
+
+.ui.steps .step.active {
+    cursor: auto;
+    background: #fff;
+}
+
+.ui.steps .step.active:after {
+    background: #fff;
+}
+
+.ui.ordered.steps .step.active:before {
+    color: #4fc3f7;
+}
+
+.ui.positive.button, .ui.positive.button:hover {
+    background-color: #4fc3f7 !important;
+}
+
+.ui.positive.button:active {
+    background-color: #4fc3f7 !important;
+}
+
+.ui.positive.buttons .button, .ui.positive.button {
+    background-color: #4fc3f7;
+}
+
+#btn-cancel {
+    background-color: #fff !important;
+    color: #757575 !important;
+    border: 1px solid #757575;
+}
+
+#btn-back {
+    background-color: #fff !important;
+    color: #607d8b !important;
+    border: 1px solid #607d8b;
+}
+
+#btn-next {
+    background-color: #fff !important;
+    color: #0288d1 !important;
+    border: 1px solid #0288d1;
+}
+
+#btn-ok {
+    background-color: #fff !important;
+    color: #81c784 !important;
+    border: 1px solid #81c784;
+}
+
+.ui.modal > .actions {
+    background-color: #fff;
+}
+
+.select-wrapper > ul > li > span {
+    color: #4fc3f7 !important;
+}
+
+/* INPUT FIELDS */
+/* label color */
+   .input-field label {
+     color: #000;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #4fc3f7;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #4fc3f7;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #4fc3f7;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000;
+   }
+
+   /* Card */
+   .card-header {
+    padding: 8px;
+    border-bottom: solid 1px #eeeeee;
+   }
+
+   .card-header p {
+    padding-top: 10px;
+    padding-left: 2px;
+   }
+
+   .card-header p {
+    text-transform: capitalize;
+    margin-right: 5px;
+    color: #bdbdbd;
+}
+
+.card-title, .list-device {
+    text-decoration: none !important;
+    color: rgba(0, 0, 0, 0.87 ) !important;
+}
+
+.live-image {
+    height: inherit;
+}
+
+.editHover {
+  border: 1px solid #efefef;
+  background: #eeeeee;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-icon {
+    font-size: 18px;
+    color: #bdbdbd;
+}
+
+.edit-pipe {
+    margin: 0 0 0 5px;
+}
+
+.edit-pipe-input {
+    margin-bottom: 5px !important;
+    font-size: 24px !important;
+    height: inherit !important;
+}
+
+.edit-pipe-cancel {
+    vertical-align: bottom;
+    background-color: #eeeeee !important;
+    color: white !important;
+    border: 1px solid #bdbdbd !important;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 50px;
+    margin-right: 8px;
+    color: black !important;
+}
+
+.edit-pipe-save {
+    vertical-align: bottom;
+    background-color: #337ab7 !important;
+    color: white !important;
+    border: 1px solid #2e6da4 !important;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 50px;
+}
+
+/* Modal Size */
+
+.modal {
+    background: white;
+    overflow: visible;
+}
+
+.modal-footer {
+    background: white !important;
+}
+
+/* Toggle for cam place and type */
+
+#or-type, #or-placement {
+    cursor: pointer;
+}
+
+#cam-usb, #cam-ip, #front-cam, #ceiling-cam {
+    cursor: default;
+}
+
+/* First Step modal */
+.first-step h3 {
+    color: #cfd8dc;
+}
+
+.first-step i {
+    margin: 40px 0;
+    color: #4fc3f7;
+    font-size: 7rem;
+    display: block;
+}
+
+.template-item {
+    border: 1px solid #eeeeee;
+    margin: 2em;
+    cursor: pointer;
+}
+
+.template-item.active {
+    border: 1px solid #eeeeee;
+}
+
+.template-item.disabled, .template-item.disabled i {
+    cursor: default;
+    color: #eeeeee;
+    background: #fefefe;
+    border: none;
+}
+
+.template-item h3 {
+    color: #9e9e9e;
+}
+
+.template-item.disabled h3 {
+    color: #eeeeee;
+}
+
+.template-item p {
+    margin-bottom: 1em;
+}
+
+.select-dropdown li.disabled span {
+    color: #bdbdbd !important;
+    cursor: default !important;
+}
+
+.select-dropdown li.disabled:hover span {
+    background-color: white;
+}
+
+/* NAVBAR */
+
+nav {
+    background: white;
+}
+
+nav ul, nav ul li, nav ul li a {
+    height: inherit;
+}
+
+nav ul li a {
+    color: #777;
+}
+
+nav ul li:hover, nav ul li a:hover, nav ul li.active a {
+    color: black !important;
+}
+
+nav ul li:hover, nav ul li a:hover {
+    background: white;
+}
+
+nav ul li.active:hover, nav ul li.active a:hover {
+    background: #e7e7e7;
+}
+
+

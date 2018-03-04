@@ -1,0 +1,36 @@
+platform:
+  - x64
+
+version: "{build}"
+
+configuration: Release
+
+cache:
+  - C:\tools\opencv\build\python\2.7\x64\cv2.pyd -> appveyor.yml
+  - '%LOCALAPPDATA%\pip\Cache -> setup.py'
+
+environment:
+  PYTHON: "C:\\\\Python27-x64"
+
+before_build:
+  - virtualenv -p "%PYTHON%\python.exe" honorata-env
+  - honorata-env\Scripts\activate.bat
+  - pip install .
+  - pip install pyinstaller
+  - if not exist "C:\tools\opencv\build\python\2.7\x64\cv2.pyd" choco install opencv --version 2.4.13
+  - copy "C:\tools\opencv\build\python\2.7\x64\cv2.pyd" "%VIRTUAL_ENV%\Lib\site-packages"
+
+build_script:
+  - cd "%APPVEYOR_BUILD_FOLDER%\bin"
+  - winbuild.bat honorata.spec
+  - cd dist
+  # Set the zip file name with the git branch and the 8 first chars of the commit SHA1
+  - set ZIPFILE=honorata-%APPVEYOR_REPO_BRANCH%-%APPVEYOR_REPO_COMMIT:~0,8%.zip
+  # Replace '/' character from the branch name by a '-' character
+  - set ZIPFILE=%ZIPFILE:/=-%
+  - 7z a -tzip %ZIPFILE% honorata
+
+test: off
+
+artifacts:
+- path: bin\dist\*.zip

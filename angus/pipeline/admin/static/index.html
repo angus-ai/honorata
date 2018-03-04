@@ -1,0 +1,254 @@
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+  -->
+
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.css">
+        <script
+                src="https://code.jquery.com/jquery-3.1.1.min.js"
+                integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="js/index.js"></script>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <nav class="" style="
+            height: 50px;
+            box-shadow: none;
+            border-bottom: 1px solid #eeeeee;">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" style="display: inline-block; height: 100%;">
+                        <img width="100" class="valign-wrapper" src="./images/angus.png" style="margin-top: 10px;"/>
+                    </a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li class="active"><a class="valign-wrapper" href="./index.html">Streams</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+
+        <div class="container">
+
+            <div id="main">
+                <h1 class="grey-text lighten-3">Welcome on Honorata</h1>
+                <a id="reveal" class="btn-flat main-btn" style="display: inline-flex;">
+                    <i class="material-icons">add_circle_outline</i>&nbsp;<span>Add a stream</span>
+                </a>
+            </div>
+
+            <!--MODAL-->
+            <div class="modal" id="new-pipe-modal">
+
+                <!--MODAL TITLE-->
+
+
+                <!--MODAL CONTENT-->
+                <div class="modal-content">
+                    <h2 class="grey-text lighten-3 center-align">Configure your stream</h2>
+
+                    <!--STEPS GUIDE OF THE MODAL-->
+                    <div class="ui ordered steps container center-align" style="width: 100%;">
+                        <a class="active step" id="choose-camera-type">
+                            <div class="content">
+                                <div class="title">Camera Mode</div>
+                                <div class="description">Choose your camera mode</div>
+                            </div>
+                        </a>
+                        <a class=" disabled step" id="form-step">
+                            <div class="content">
+                                <div class="title">Camera type</div>
+
+                                <div class="description">Choose your device</div>
+                            </div>
+                        </a>
+
+                        <a class=" disabled step" id="credentials">
+                            <div class="content">
+                                <div class="title">Cloud Authentication</div>
+                                <div class="description">Enter your login credentials</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!--STEPS CONTENT-->
+                    <div class="row first-step center-align">
+                        <div class="col s3 offset-s1 template-item active" value="audience">
+                            <img class="responsive-img" src="./images/audience.png"/>
+                            <h3>Audience</h3>
+                            <p class="template-description">
+                                Monitor the audience of your screen
+                            </p>
+                        </div>
+                        <div class="col s3 template-item disabled" value="journey">
+                            <img class="responsive-img" src="./images/journey.png"/>
+                            <h3>Journey</h3>
+                            <p class="template-description">
+                                Track customers journey in your store
+                            </p>
+                        </div>
+                        <div class="col s3 template-item disabled" value="passport">
+                            <img class="responsive-img" src="./images/passport.png"/>
+                            <h3>Passport</h3>
+                            <p class="template-description">
+                                Identify your best customers
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="form" class="row" style="margin-top: 1em;">
+                        <h4 class="ui horizontal divider header">
+                            Camera Type
+                        </h4>
+                        <div id="camera-type" class="center-align">
+                            <div class="ui large buttons">
+                                <button class="ui button" id="cam-usb">USB</button>
+                                <div class="or" data-text="or" id="or-type"></div>
+                                <button class="ui button" id="cam-ip">IP</button>
+                            </div>
+                        </div>
+                        <form class="center-align" id="form-content" style="margin-top: 2em;">
+
+                            <div class="input-field col s4 offset-s4" id="ip-selected">
+                                <label>IP</label>
+                                <input id="ip" placeholder="rtsp://" type="text" class="validate" required>
+                            </div>
+
+                            <div class="input-field col s4 offset-s4" id="usb-selected">
+
+                                <select id="video">
+                                    <option value="" disabled selected>Select device</option>
+                                </select>
+                                <label>USB</label>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div id="third">
+                        <id class="row" id="third-form">
+                            <div class="input-field col s4 offset-s2">
+                                <label>Client ID</label>
+                                <input placeholder="Client id" id="client_id" type="text" class="validate">
+                            </div>
+
+                            <div class="input-field col s4">
+                                <label>Access Token</label>
+                                <input placeholder="Access token" id="access_token" type="text" class="validate">
+                            </div>
+                        </id>
+
+                          <div class="ui horizontal divider">
+                            if you don't know your credentials or don't have it yet, please go to
+                          </div>
+
+                        <a href="https://console.angus.ai/" class="ui blue button btn-flat main-btn" target="_blank">
+                            <i class="Chevron Right icon"></i>
+                            Angus console
+                        </a>
+                    </div>
+
+                </div>
+
+                <!--MODAL ACTIONS CANCEL / NEXT / OK -->
+                <div class="modal-footer" style="text-align: center !important;">
+                    <div class="ui button modal-action modal-close btn-flat" id="btn-cancel">
+                        Cancel
+                    </div>
+                    <div class="ui grey button btn-flat" id="btn-back">
+                        <i class="Chevron Left icon"></i>
+                        Back
+                    </div>
+                    <div class="ui blue button btn-flat" id="btn-next">
+                        Next
+                        <i class="Chevron right icon"></i>
+                    </div>
+                    <div class="ui button btn-flat" id="btn-ok">
+                        <i class="Checkmark icon"></i>
+                        OK
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!--STREAM LIST-->
+            <div id="pipes" class="row" style="">
+
+            </div>
+
+            <template id="mytemplate">
+                <div class="col s12 item">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title inline-editable">
+                                <span class="list-device" style="text-transform: none;">x</span>&nbsp;<i class="material-icons edit-icon hide">mode_edit</i>
+                            </span>
+                            <div class="input-field inline edit-pipe hide">
+                                <span class="edit-input-error red-text hide">The name already exist</span>
+                                <input placeholder="Device name" class="edit-pipe-input" type="text" style="display: inline;"/>
+                                <a class="edit-pipe-save right center-align">Save</a>
+                                <a class="edit-pipe-cancel right center-align">Cancel</a>
+                            </div>
+                            <div class="right" style="display:inline-block;">
+                                <div class="switch">
+                                    <label>
+                                        <input id="switch-input" class="auto-start" type="checkbox">
+                                        <span id="switch-lever" class="lever"></span>
+                                    </label>
+                                </div>
+                                <p style="color: #bdbdbd;">Auto start</p>
+                            </div>
+
+                            <p>
+                                <b>Mode : <span class="list-type">x</span> - </b>
+                                <b>Placement : <span class="list-placement">x</span></b>
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="center-align">
+                                <img width="40%" height="300" class="live-image hide"/>
+                            </div>
+                        </div>
+                        <div class="card-action center-align">
+                            <button class="btn-flat btn-start">
+                                 <i class="material-icons">play_arrow</i>&nbsp;<span>Start</span>
+                             </button>
+                             <button class="btn-flat btn-stop">
+                                 <i class="material-icons">stop</i>&nbsp;<span>Stop</span>
+                             </button>
+                             <button class="btn-flat btn-live">
+                                 <i class="material-icons">remove_red_eye</i>&nbsp;<span class="live-text">Live</span>
+                             </button>
+
+                            <button class="btn-flat btn-delete right">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+
+    </body>
+</html>
