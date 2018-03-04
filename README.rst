@@ -1,6 +1,10 @@
 Angus Honorata
 ==============
 
+Status
+------
+.. image:: https://ci.appveyor.com/api/projects/status/et9fh3fbskc11t3m/branch/master?svg=true
+
 Introduction
 ------------
 
